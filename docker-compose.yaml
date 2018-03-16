@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  elasticsearch:
+    image: quay.io/giantswarm/elasticsearch-oss:6.1.1
+    ports:
+      - 9200:9200
+
+  migrator:
+    build: .
+    image: quay.io/giantswarm/es-index-migrator:latest
+    environment:
+      ELASTICSEARCH_ENDPOINT: http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
