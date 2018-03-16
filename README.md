@@ -10,6 +10,8 @@ from `fluentd-*` to `logs-*`.
 
 ## Configuration
 
-Required environment variables:
+Optional environment variables:
 
-- `ELASTICSEARCH_ENDPOINT`: e. g. `http://elasticsearch:9200`
+- `ELASTICSEARCH_ENDPOINT`: Elasticsearch base URL, default `http://elasticsearch:9200`
+- `MIGRATOR_OLD_PREFIX`: Old prefix name to use, default: `fluentd-`
+- `MIGRATOR_NEW_PREFIX`: New prefix name to use, default: `gslogs-`

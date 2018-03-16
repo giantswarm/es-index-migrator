@@ -15,9 +15,11 @@ num_days=16
 # Date format used in our index pattern
 format="+%Y.%m.%d"
 
-oldprefix="fluentd"
+# old index name prefix
+oldprefix="${MIGRATOR_OLD_PREFIX:-fluentd}"
 
-newprefix="logs"
+# new index name prefix
+newprefix="${MIGRATOR_NEW_PREFIX:-gslogs}"
 
 # Check env variable
 if [ "${ELASTICSEARCH_ENDPOINT}" == "" ]; then
