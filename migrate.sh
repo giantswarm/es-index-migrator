@@ -62,3 +62,10 @@ while [  $COUNTER -lt $num_days ]; do
 
   let COUNTER=COUNTER+1
 done
+
+# Prevent pod failure
+while :
+do
+	echo "Staying alive"
+	sleep 3600
+done
